@@ -8,6 +8,8 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddDbContext<FakingContext>(cfg => cfg.UseSqlServer(builder.Configuration.GetConnectionString("FakingItDb")));
 
+builder.Services.AddTransient<Fakers>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
